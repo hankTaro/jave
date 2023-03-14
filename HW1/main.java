@@ -4,16 +4,53 @@ import java.util.Scanner;
 public class Main
 {
 	public static void main(String[] args) {
-	    Scanner keyboard = new Scanner(System.in);
+		Scanner keyboard = new Scanner(System.in);
 	    
 		ArrayList<Integer> score = new ArrayList<Integer>();
-		while(keyboard.hasNextInt())
-        {
-            score.add(keyboard.nextInt());
-        }
-        
+//		while(keyboard.hasNext())
+//	    {
+//	        score.add(keyboard.nextInt());
+//	    }
+		int count = 0;
+		while(true)
+	    {
+			int temp = keyboard.nextInt();
+			if(temp == 10)
+			{
+				count += 2;
+			}
+			else {
+				count++;
+			}
+			
+	        score.add(temp);
+	        
+	        if(count == 18)
+	        {
+	        	temp = keyboard.nextInt();
+	        	score.add(temp);
+	        	if(temp == 10)
+	        	{
+	        		score.add(keyboard.nextInt());
+	        		score.add(keyboard.nextInt());
+	        		break;
+	        	}
+	        	else
+	        	{
+	        		int temp2 = keyboard.nextInt();
+	        		score.add(temp2);
+	        		if(temp + temp2 == 10)
+	        		{
+	        			score.add(keyboard.nextInt());
+	        		}
+	        		break;
+	        	}
+	        }
+	    }
+	    
 		int sum = 0;
 		int ptr = 0;
+		
 		
 		for(int i = 0; i < 10 ; i++)
 		{
