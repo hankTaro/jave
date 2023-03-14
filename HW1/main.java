@@ -12,8 +12,6 @@ public class Main
             score.add(keyboard.nextInt());
         }
         
-		
-		int n = score.size();
 		int sum = 0;
 		int ptr = 0;
 		
